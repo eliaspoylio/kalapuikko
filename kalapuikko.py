@@ -2,21 +2,20 @@ import re
 
 with open("testconf.txt","r") as f:
     data = f.read()
-    lines = f.readlines()
 
-found = re.findall(r"(?<={{)(.*?)(?=}})",data,re.M)
+templates = re.findall(r"(?<={{)(.*?)(?=}})",data,re.M)
 
 # remove duplicates
-found = list(dict.fromkeys(found))
+templates = list(dict.fromkeys(templates))
 
-my_dict = {}
+user_input = {}
 
-for key in found:
+for key in templates:
     x = input(key+':')
-    my_dict[key]=x
-print(my_dict)
+    user_input[key]=x
+print("##########################")
 
-for key, value in my_dict.items():
+for key, value in user_input.items():
     pattern = '{{'+key+'}}'
 
     data = re.sub(pattern, value, data, flags = re.M)
