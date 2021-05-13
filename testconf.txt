@@ -1,0 +1,4 @@
+set interfaces {{WAN}} ip address {{WAN_IP_ADDRESS}}/30
+set interfaces {{WAN}} description {{LONGER_STRING}}
+set interfaces {{LAN}} ip address {{LAN_IP_ADDRESS}}/24
+set interfaces {{LAN}} description {{evenlongerstring10101}}
